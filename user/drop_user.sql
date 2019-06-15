@@ -7,7 +7,7 @@ select to_char(sysdate,'yyyymmdd_HH24MISS') log_date from dual;
 
 spool drop_user_&log_date..log
 
-DROP USER NYADBA CASCADE;
+DROP USER SOE CASCADE;
 
 spool off
 exit
