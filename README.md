@@ -1,4 +1,4 @@
- oracle_scripts
+# oracle_scripts
 ## awr
 
 * スナップショット取得   
