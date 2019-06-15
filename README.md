@@ -28,6 +28,8 @@
 `$ sh impdp_schema_stats.sh`   
 * 対象スキーマの全tableについて自動的にdbms_statsコマンドを生成し実行   
 `$ sh gather_stats.sh`
+* 対象スキーマのテーブル、インデックス、カラム統計を表示   
+`$ sh select_all_stats.sh`
 
 ## user
 * スキーマの作成  
