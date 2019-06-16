@@ -5,6 +5,8 @@
 `$ sh snapshot.sh`
 * 最新のスナップショットからAWRレポートを生成    
 `$ sh awrrpt.sh`  
+* AWRレポートを引数にSQLレポートを生成    
+`$ sh sqlrpt.sh <AWRレポートファイル名>`  
 
 ## expimp
 * スキーマモードでexport    
