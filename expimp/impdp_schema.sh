@@ -6,6 +6,7 @@ export NLS_LANG=American_America.AL32UTF8
 ADMINUSER=NYADBA
 ADMINPASS=nyadba
 IMPUSER=SOE
+IMPPASS=soe
 TNS=nyapdb1
 
 DMP_PATH=/u01/app/oracle/dpdump
@@ -53,3 +54,16 @@ EOF
 
 ls -l ${DMP_PATH}/${BASE_NAME}*
 cat ${DMP_PATH}/${LOG_NAME} >> ${LOG_NAME}
+
+
+# GRANT for swintbench
+sqlplus -s ${ADMINUSER}/${ADMINPASS}@${TNS} << EOF | tee -a ${LOG_NAME}
+set feed off
+GRANT EXECUTE ON DBMS_LOCK TO ${IMPUSER};
+EOF
+
+# COMPILE PACKAGE for swingbench
+sqlplus -s ${IMPUSER}/${IMPPASS}@${TNS} << EOF | tee -a ${LOG_NAME}
+set feed off
+ALTER PACKAGE ORDERENTRY COMPILE; 
+EOF
