@@ -20,8 +20,7 @@ DMP_NAME=${BASE_NAME}.dmp
 LOG_NAME=${BASE_NAME}_${TIMESTAMP}.imp.log
 JOB_NAME=JOB_${IMPUSER}_IMPSCHEMA
 
-sqlplus ${ADMINUSER}/${ADMINPASS}@${TNS} << EOF | tee -a ${LOG_NAME}
-set echo on
+sqlplus -s ${ADMINUSER}/${ADMINPASS}@${TNS} << EOF | tee -a ${LOG_NAME}
 set feed off
 drop user ${IMPUSER} cascade;
 EOF
